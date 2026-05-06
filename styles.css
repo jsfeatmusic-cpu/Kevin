@@ -1,9 +1,11 @@
-/* Variables de color */
+/* Variables de color y estilos base */
 :root {
     --bg-color: #121212;
     --text-color: #f4f4f4;
-    --accent-color: #cda434; /* Un tono dorado/bronce elegante */
+    --accent-color: #cda434; /* Dorado elegante */
     --card-bg: #1e1e1e;
+    --whatsapp-color: #25D366; /* Color oficial WhatsApp */
+    --instagram-color: #E1306C; /* Un tono representativo de Instagram */
 }
 
 * {
@@ -81,7 +83,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* Aquí puedes agregar una imagen de fondo de un tatuaje o pañuelo */
+    /* Imagen de fondo genérica elegante */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1562962230-16e4623d36e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
 }
 
@@ -97,6 +99,7 @@ header {
 }
 
 .btn {
+    display: inline-block;
     padding: 12px 30px;
     background-color: transparent;
     color: var(--accent-color);
@@ -106,6 +109,7 @@ header {
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin: 10px;
 }
 
 .btn:hover {
@@ -150,41 +154,56 @@ section h2 {
     gap: 20px;
 }
 
-.image-placeholder {
+.gallery-item {
     background-color: var(--card-bg);
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: 1px solid #333;
+    overflow: hidden;
     transition: transform 0.3s ease;
 }
 
-.image-placeholder:hover {
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
     transform: scale(1.05);
 }
 
-/* Formulario de Contacto */
-form {
-    max-width: 600px;
-    margin: 40px auto 0;
+/* Métodos de Contacto Directo */
+.contact-methods {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
+    margin-top: 50px;
 }
 
-input, select, textarea {
-    width: 100%;
-    padding: 15px;
-    background-color: var(--card-bg);
-    border: 1px solid #333;
-    color: var(--text-color);
-    font-family: inherit;
+.whatsapp-btn {
+    background-color: var(--whatsapp-color);
+    color: white;
+    border-color: var(--whatsapp-color);
 }
 
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
+.whatsapp-btn:hover {
+    background-color: #1a9e4d;
+    border-color: #1a9e4d;
+    color: white;
+}
+
+.instagram-btn {
+    background-color: var(--instagram-color);
+    color: white;
+    border-color: var(--instagram-color);
+}
+
+.instagram-btn:hover {
+    background-color: #c0265d;
+    border-color: #c0265d;
+    color: white;
 }
 
 footer {
