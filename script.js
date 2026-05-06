@@ -1,13 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Lógica para el filtro de la galería
+    // 1. Menú Hamburguesa
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li a');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('toggle');
+    });
+
+    // Cerrar menú al hacer clic en un enlace (Móvil)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('nav-active')) {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+            }
+        });
+    });
+
+    // 2. Filtro de Galería Suavizado
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remover clase activa de todos los botones
+            // Manejo de clases activas
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Añadir clase activa al botón clickeado
             button.classList.add('active');
 
             const filterValue = button.getAttribute('data-filter');
@@ -15,56 +34,39 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryItems.forEach(item => {
                 if (filterValue === 'all' || item.classList.contains(filterValue)) {
                     item.style.display = 'block';
-                    // Pequeña animación de entrada
+                    // Pequeño retardo para que la transición CSS funcione al reaparecer
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'scale(1)';
-                    }, 10);
+                    }, 50);
                 } else {
                     item.style.opacity = '0';
                     item.style.transform = 'scale(0.8)';
+                    // Esperar a que termine la animación antes de ocultar
                     setTimeout(() => {
                         item.style.display = 'none';
-                    }, 300); // Mismo tiempo que la transición CSS
+                    }, 300);
                 }
             });
         });
     });
 
-    // 2. Smooth Scrolling para los enlaces del nav
+    // 3. Desplazamiento suave (Smooth Scroll)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            if(targetId === '#') return;
             
+            const targetSection = document.querySelector(targetId);
             if (targetSection) {
-                targetSection.scrollIntoView({
+                // Restamos 70px por la altura del menú fijo (header)
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - 70;
+                window.scrollTo({
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
             }
         });
-    });
-
-    // 3. Menú Hamburguesa básico
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinksLi = document.querySelectorAll('.nav-links li');
-
-    burger.addEventListener('click', () => {
-        // Alternar menú
-        navLinks.classList.toggle('nav-active');
-
-        // Animación de enlaces
-        navLinksLi.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-            }
-        });
-
-        // Animación del icono burger
-        burger.classList.toggle('toggle');
     });
 });
