@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin Ink & Art | Tatuajes y Arte en Tres Lagos</title>
+    <title>Kevin Leguiza | Estudio de Arte y Tatuajes en Tres Lagos</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="logo">Kevin <span>Art</span></div>
+        <div class="logo">Kevin<span>Legza</span></div>
         <nav>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#sobre-mi">El Artista</a></li>
+                <li><a href="#galeria">Portfolio</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <div class="burger">
@@ -27,41 +27,52 @@
     </header>
 
     <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Arte en la Piel y en Tela</h1>
-            <p>Diseños únicos y personalizados. Desde Tres Lagos para el mundo.</p>
-            <a href="#contacto" class="btn">Reserva tu turno</a>
+            <h1>Tinta y Arte en el Corazón de la Patagonia</h1>
+            <p>Desde Tres Lagos, Santa Cruz. Tatuajes de autor, remeras estampadas, murales y piezas únicas para llevar contigo.</p>
+            <div class="hero-buttons">
+                <a href="#galeria" class="btn btn-outline">Ver Trabajos</a>
+                <a href="#contacto" class="btn btn-solid">Agendar Sesión</a>
+            </div>
         </div>
     </section>
 
     <section id="sobre-mi" class="about">
         <div class="container">
-            <h2>Sobre Kevin</h2>
-            <p>Soy un artista radicado en Tres Lagos, Santa Cruz, especializado en tatuajes de autor y el diseño de pañuelos artísticos exclusivos. Mi objetivo es plasmar tus ideas y convertirlas en obras de arte que puedas llevar contigo, ya sea en tu piel o como un accesorio único.</p>
+            <div class="about-text">
+                <h2>Arte que marca la piel y el alma</h2>
+                <p>Ubicado en el imponente paisaje de Tres Lagos, mi estudio es un refugio creativo. Me especializo en <strong>tatuajes con un profundo nivel de detalle</strong> y significado. Pero mi lienzo no es solo la piel: también creo <strong>pañuelos zamberos, cajas chayeras, retratos y remeras personalizadas</strong>.</p>
+                <p>Mi objetivo es transformar tus ideas, recuerdos y pasiones en una obra de arte exclusiva que te acompañe siempre.</p>
+            </div>
         </div>
     </section>
 
     <section id="galeria" class="portfolio">
         <div class="container">
-            <h2>Mi Trabajo</h2>
+            <h2>Portfolio Exclusivo</h2>
             <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn active" data-filter="all">Todo el Arte</button>
                 <button class="filter-btn" data-filter="tatuajes">Tatuajes</button>
-                <button class="filter-btn" data-filter="panuelos">Pañuelos Artísticos</button>
+                <button class="filter-btn" data-filter="arte">Arte Visual & Telas</button>
             </div>
             
             <div class="gallery-grid">
                 <div class="gallery-item tatuajes">
-                    <img src="1.jpg" alt="Tatuaje detallado de estilo botánico y celestial en blanco y negro, en el antebrazo.">
-                </div>
-                <div class="gallery-item panuelos">
-                    <img src="2.jpg" alt="Pañuelo de seda fluido con un estampado artístico abstracto de acuarela en azules y verdes.">
+                    <img src="1.jpg" alt="Tatuaje detallado de cruz y corona de espinas en antebrazo" loading="lazy">
+                    <div class="item-overlay"><span>Black & Grey Tattoo</span></div>
                 </div>
                 <div class="gallery-item tatuajes">
-                    <img src="3.jpg" alt="Tatuaje a todo color de estilo neo-tradicional de un tigre en la parte superior del brazo.">
+                    <img src="2.jpg" alt="Tatuaje de rosa oscura con línea de vida y corazón" loading="lazy">
+                    <div class="item-overlay"><span>Tatuaje Linea de Vida</span></div>
                 </div>
-                <div class="gallery-item panuelos">
-                    <img src="4.jpg" alt="Pañuelo de algodón con un detallado estampado de linograbado botánico de hojas de roble y enredaderas.">
+                <div class="gallery-item arte">
+                    <img src="3.jpg" alt="Remera negra con diseño blanco Esperanza, Fe, Amor, Danza" loading="lazy">
+                    <div class="item-overlay"><span>Indumentaria Personalizada</span></div>
+                </div>
+                <div class="gallery-item arte">
+                    <img src="4.jpg" alt="Collage de obras de Kevin: cajas chayeras, murales y pañuelos" loading="lazy">
+                    <div class="item-overlay"><span>Murales & Cuadros</span></div>
                 </div>
             </div>
         </div>
@@ -69,22 +80,24 @@
 
     <section id="contacto" class="contact">
         <div class="container">
-            <h2>Contacto & Reservas</h2>
-            <p>¿Listo para tu próximo diseño? Escríbeme o sígueme en redes y hablemos.</p>
+            <h2>Hagamos Realidad tu Idea</h2>
+            <p>Ya sea que pases por la Ruta 40 y quieras un tatuaje de recuerdo, o busques una obra de arte por encargo, estoy a un mensaje de distancia.</p>
             
             <div class="contact-methods">
-                <a href="https://wa.me/5493804236121?text=Hola%20Kevin!%20Me%20interesa%20tu%20arte%20y%20quer%C3%ADa%20más%20info." target="_blank" class="btn whatsapp-btn">
-                    Pedir info por WhatsApp
+                <a href="https://wa.me/5493804236121?text=Hola%20Kevin!%20Vi%20tu%20página%20web%20y%20me%20encantaría%20cotizar%20un%20trabajo%20contigo." target="_blank" class="btn-social btn-whatsapp">
+                    <span class="icon">💬</span> Chatear por WhatsApp
                 </a>
-                <a href="https://www.instagram.com/kevinleguizalr?igsh=NHZpMzg0MnF5dThh" target="_blank" class="btn instagram-btn">
-                    Ver más en Instagram
+                <a href="https://www.instagram.com/kevinleguizalr?igsh=NHZpMzg0MnF5dThh" target="_blank" class="btn-social btn-instagram">
+                    <span class="icon">📸</span> Explorar mi Instagram
                 </a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Kevin Ink & Art - Tres Lagos, Santa Cruz. Todos los derechos reservados.</p>
+        <div class="container">
+            <p>&copy; 2026 Kevin Legza Ink & Art. Arte desde Tres Lagos, Santa Cruz, Argentina.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
