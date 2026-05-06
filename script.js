@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryItems.forEach(item => {
                 if (filterValue === 'all' || item.classList.contains(filterValue)) {
                     item.style.display = 'block';
-                    // Pequeña animación
+                    // Pequeña animación de entrada
                     setTimeout(() => {
                         item.style.opacity = '1';
                         item.style.transform = 'scale(1)';
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.style.transform = 'scale(0.8)';
                     setTimeout(() => {
                         item.style.display = 'none';
-                    }, 300);
+                    }, 300); // Mismo tiempo que la transición CSS
                 }
             });
         });
@@ -46,11 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Prevent Default en el formulario para pruebas
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('¡Mensaje enviado! (Esto es una demostración, deberás conectarlo a un backend o servicio como Formspree).');
-        form.reset();
+    // 3. Menú Hamburguesa básico
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksLi = document.querySelectorAll('.nav-links li');
+
+    burger.addEventListener('click', () => {
+        // Alternar menú
+        navLinks.classList.toggle('nav-active');
+
+        // Animación de enlaces
+        navLinksLi.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+            }
+        });
+
+        // Animación del icono burger
+        burger.classList.toggle('toggle');
     });
 });
