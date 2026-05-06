@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Ink & Art | Tatuajes y Pañuelos en Tres Lagos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Kevin <span>Art</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Arte en la Piel y en Tela</h1>
+            <p>Diseños únicos y personalizados. Desde Tres Lagos para el mundo.</p>
+            <a href="#contacto" class="btn">Reserva tu turno</a>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2>Sobre Kevin</h2>
+            <p>Soy un artista radicado en Tres Lagos, Santa Cruz, especializado en tatuajes de autor y el diseño de pañuelos artísticos exclusivos. Mi objetivo es plasmar tus ideas y convertirlas en obras de arte que puedas llevar contigo, ya sea en tu piel o como un accesorio único.</p>
+        </div>
+    </section>
+
+    <section id="galeria" class="portfolio">
+        <div class="container">
+            <h2>Mi Trabajo</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="tatuajes">Tatuajes</button>
+                <button class="filter-btn" data-filter="panuelos">Pañuelos Artísticos</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item tatuajes">
+                    <div class="image-placeholder">Tatuaje 1</div>
+                </div>
+                <div class="gallery-item panuelos">
+                    <div class="image-placeholder">Pañuelo 1</div>
+                </div>
+                <div class="gallery-item tatuajes">
+                    <div class="image-placeholder">Tatuaje 2</div>
+                </div>
+                <div class="gallery-item panuelos">
+                    <div class="image-placeholder">Pañuelo 2</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contacto & Reservas</h2>
+            <p>¿Listo para tu próximo diseño? Escríbeme y hagámoslo realidad.</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Email" required>
+                <select required>
+                    <option value="" disabled selected>¿Qué te interesa?</option>
+                    <option value="tatuaje">Tatuaje</option>
+                    <option value="panuelo">Pañuelo Artístico</option>
+                    <option value="otro">Otra consulta</option>
+                </select>
+                <textarea placeholder="Cuéntame tu idea..." rows="5" required></textarea>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kevin Ink & Art - Tres Lagos, Santa Cruz. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
