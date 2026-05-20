@@ -4,149 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia 5° Año - CPES N°30</title>
-    <style>
-        :root {
-            --primary-color: #CA8A04;
-            --secondary-color: #A16207;
-            --bg-color: #F3F4F6;
-            --card-bg: #FFFFFF;
-            --text-main: #1F2937;
-            --text-muted: #6B7280;
-            --portal-blue: #2563EB;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            padding-bottom: 80px;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: relative;
-        }
-
-        header h1 { margin: 0; font-size: 2.2rem; letter-spacing: 1px; }
-        header h2 { margin: 10px 0 0 0; font-size: 1.5rem; font-weight: 400; color: #FEF08A; }
-
-        .profesor-badge {
-            display: inline-block;
-            margin-top: 1.5rem;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            backdrop-filter: blur(5px);
-        }
-
-        main { max-width: 900px; margin: 3rem auto; padding: 0 1rem; }
-
-        .section-container {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-color);
-        }
-
-        .section-title {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #E5E7EB;
-            padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-top: 1.5rem;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%; border: 0;
-        }
-
-        .task-box {
-            background-color: #FEF9C3;
-            border-left: 4px solid var(--primary-color);
-            padding: 15px 20px;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; font-weight: bold; margin-bottom: 0.5rem; }
-        .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"], .form-group textarea {
-            width: 100%; padding: 12px; border: 1px solid #D1D5DB;
-            border-radius: 8px; font-family: inherit; font-size: 1rem; box-sizing: border-box;
-        }
-        .form-group textarea { resize: vertical; min-height: 100px; }
-
-        .btn-submit {
-            background-color: var(--primary-color); color: white; border: none;
-            padding: 12px 25px; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
-            cursor: pointer; transition: 0.3s; width: 100%;
-        }
-        .btn-submit:hover { background-color: var(--secondary-color); }
-
-        .success-msg {
-            display: none; background-color: #D1FAE5; color: #065F46;
-            padding: 15px; border-radius: 8px; margin-top: 15px; text-align: center; font-weight: bold;
-        }
-
-        /* --- CONTROLES DEL PANEL DOCENTE --- */
-        .teacher-controls {
-            position: fixed; bottom: 20px; left: 20px; z-index: 1000;
-        }
-        
-        .btn-dashboard {
-            background-color: var(--text-main); color: white; border: none;
-            padding: 10px 20px; border-radius: 20px; cursor: pointer; font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: 0.3s;
-        }
-        .btn-dashboard:hover { background-color: #000; }
-
-        #login-modal, #teacher-dashboard { display: none; }
-
-        .student-submission {
-            background-color: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 8px;
-            padding: 15px; margin-bottom: 15px;
-        }
-        .student-submission h4 { color: var(--portal-blue); border-bottom: 1px solid #E5E7EB; padding-bottom: 5px; margin: 0 0 10px 0;}
-        .question-title { font-weight: bold; margin-top: 10px; margin-bottom: 4px; color: var(--text-main); }
-        .answer-text { color: var(--text-muted); background: white; padding: 8px; border-radius: 4px; border: 1px dashed #D1D5DB; margin: 0; }
-        .badge { background: var(--primary-color); color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem; float: right; }
-        
-        .filter-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
-        .btn-tab { padding: 8px 15px; border: 1px solid #D1D5DB; background: white; border-radius: 6px; cursor: pointer; font-weight: bold; }
-        .btn-tab.active { background: var(--portal-blue); color: white; border-color: var(--portal-blue); }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
-        <h1>Historia Argentina </h1>
+        <h1>Historia Argentina</h1>
         <h2>5° Año</h2>
         <div class="profesor-badge">Profesor/a: Laura Santucci</div>
     </header>
@@ -163,8 +26,33 @@
             </div>
         </section>
 
-        <section class="section-container" id="seccion-cuestionario-1">
-            <h2 class="section-title">📝 Cuestionario 2: Generación del 80 y Modelo Agroexportador</h2>
+       
+        <section class="section-container" id="seccion-cuestionario-2">
+            <h2 class="section-title">📝 Cuestionario 2: Fin del Modelo y Década Infame</h2>
+            <form id="form-cuestionario-2">
+                <div class="form-group">
+                    <label for="nombre-2">Nombre y Apellido del Alumno:</label>
+                    <input type="text" id="nombre-2" required placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label>1. ¿Por qué en el año 1880 se considera un punto de inicio en la historia argentina?</label>
+                    <textarea id="q2-1" required placeholder="Desarrolla tu respuesta aquí..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>2. ¿Qué cambios marcaron el fin de ese modelo?</label>
+                    <textarea id="q2-2" required placeholder="Desarrolla tu respuesta aquí..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>3. ¿Qué se entiende por Década Infame?</label>
+                    <textarea id="q2-3" required placeholder="Desarrolla tu respuesta aquí..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Cuestionario 2</button>
+                <div class="success-msg" id="success-2">¡Cuestionario 2 enviado con éxito! Respuestas guardadas en la nube.</div>
+            </form>
+        </section>
+
+ <section class="section-container" id="seccion-cuestionario-1">
+            <h2 class="section-title">📝 Cuestionario 3: Generación del 80 y Modelo Agroexportador</h2>
             <form id="form-cuestionario-1">
                 <div class="form-group">
                     <label for="nombre-1">Nombre y Apellido del Alumno:</label>
@@ -187,31 +75,92 @@
                     <textarea id="q1-4" required placeholder="Desarrolla tu respuesta aquí..."></textarea>
                 </div>
                 <button type="submit" class="btn-submit">Enviar Cuestionario 1</button>
-                <div class="success-msg" id="success-1">¡Cuestionario 1 enviado con éxito! Respuestas guardadas en la nube.</div>
+                <div class="success-msg" id="success-1">¡Cuestionario 3 enviado con éxito! Respuestas guardadas en la nube.</div>
             </form>
         </section>
 
-        <section class="section-container" id="seccion-cuestionario-2">
-            <h2 class="section-title">📝 Cuestionario 3: Fin del Modelo y Década Infame</h2>
-            <form id="form-cuestionario-2">
+
+
+        
+        <section class="section-container" id="seccion-cuestionario-3">
+            <h2 class="section-title">📝 Tarea 4: Golpe de Estado de 1930 y Crisis Económica</h2>
+            <form id="form-cuestionario-3">
                 <div class="form-group">
-                    <label for="nombre-2">Nombre y Apellido del Alumno:</label>
-                    <input type="text" id="nombre-2" required placeholder="Ej: Juan Pérez">
+                    <label for="nombre-3">Nombre y Apellido del Alumno:</label>
+                    <input type="text" id="nombre-3" required placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="sub-task-title">▶ Actividad 1: Analizar el material visual</div>
+                <div class="form-group">
+                    <label>1. ¿En qué fecha ocurrió el golpe de Estado de 1930?</label>
+                    <input type="text" id="q3-a1-1" required placeholder="Responda la fecha exacta...">
                 </div>
                 <div class="form-group">
-                    <label>1. ¿Por qué en el año 1880 se considera un punto de inicio en la historia argentina?</label>
-                    <textarea id="q2-1" required placeholder="Desarrolla tu respuesta aquí..."></textarea>
+                    <label>2. ¿Quién encabezó el golpe militar?</label>
+                    <textarea id="q3-a1-2" required placeholder="Escriba el nombre o desglose su respuesta..."></textarea>
                 </div>
                 <div class="form-group">
-                    <label>2. ¿Qué cambios marcaron el fin de ese modelo?</label>
-                    <textarea id="q2-2" required placeholder="Desarrolla tu respuesta aquí..."></textarea>
+                    <label>3. ¿Qué sectores apoyaron el golpe?</label>
+                    <textarea id="q3-a1-3" required placeholder="Desarrolle qué sectores de la sociedad civil o fuerzas participaron..."></textarea>
+                </div>
+
+                <div class="sub-task-title">▶ Actividad 2: Impacto de la crisis de 1929 y Opciones Correctas</div>
+                <div class="form-group">
+                    <label>¿Por qué la crisis de 1929 afectó a la Argentina?</label>
+                    <textarea id="q3-a2-base" required placeholder="Explique las consecuencias económicas en el país..."></textarea>
                 </div>
                 <div class="form-group">
-                    <label>3. ¿Qué se entiende por Década Infame?</label>
-                    <textarea id="q2-3" required placeholder="Desarrolla tu respuesta aquí..."></textarea>
+                    <label>1. ¿Qué son las villas miserias?</label>
+                    <textarea id="q3-a2-1" required placeholder="Describa el origen o características de estos asentamientos..."></textarea>
                 </div>
-                <button type="submit" class="btn-submit">Enviar Cuestionario 2</button>
-                <div class="success-msg" id="success-2">¡Cuestionario 2 enviado con éxito! Respuestas guardadas en la nube.</div>
+                <div class="form-group">
+                    <label>2. ¿Por qué reciben ese nombre?</label>
+                    <textarea id="q3-a2-2" required placeholder="Explique el origen de la denominación..."></textarea>
+                </div>
+
+                <div class="sub-task-title">📌 3. Elija la opción correcta</div>
+
+                <div class="multiple-choice-container">
+                    <p class="multiple-choice-title">A) El golpe de Estado ocurrió en:</p>
+                    <label class="radio-option"><input type="radio" name="opt-a" value="1916" required> 1916</label>
+                    <label class="radio-option"><input type="radio" name="opt-a" value="1930"> 1930</label>
+                    <label class="radio-option"><input type="radio" name="opt-a" value="1976"> 1976</label>
+                </div>
+
+                <div class="multiple-choice-container">
+                    <p class="multiple-choice-title">B) El presidente derrocado fue:</p>
+                    <label class="radio-option"><input type="radio" name="opt-b" value="Juan Domingo Perón" required> Juan Domingo Perón</label>
+                    <label class="radio-option"><input type="radio" name="opt-b" value="Julio Argentino Roca"> Julio Argentino Roca</label>
+                    <label class="radio-option"><input type="radio" name="opt-b" value="Hipólito Yrigoyen"> Hipólito Yrigoyen</label>
+                    <label class="radio-option"><input type="radio" name="opt-b" value="Agustín P. Justo"> Agustín P. Justo</label>
+                </div>
+
+                <div class="multiple-choice-container">
+                    <p class="multiple-choice-title">C) El golpe fue encabezado por:</p>
+                    <label class="radio-option"><input type="radio" name="opt-c" value="Juan Manuel de Rosas" required> Juan Manuel de Rosas</label>
+                    <label class="radio-option"><input type="radio" name="opt-c" value="José Félix Uriburu"> José Félix Uriburu</label>
+                    <label class="radio-option"><input type="radio" name="opt-c" value="Bartolomé Mitre"> Bartolomé Mitre</label>
+                    <label class="radio-option"><input type="radio" name="opt-c" value="Arturo Illia"> Arturo Illia</label>
+                </div>
+
+                <div class="multiple-choice-container">
+                    <p class="multiple-choice-title">D) Una causa importante del golpe de Estado fue:</p>
+                    <label class="radio-option"><input type="radio" name="opt-d" value="La independencia de Argentina" required> La independencia de Argentina</label>
+                    <label class="radio-option"><input type="radio" name="opt-d" value="La crisis económica mundial de 1929"> La crisis económica mundial de 1929</label>
+                    <label class="radio-option"><input type="radio" name="opt-d" value="La primera guerra mundial"> La primera guerra mundial</label>
+                    <label class="radio-option"><input type="radio" name="opt-d" value="La Revolución Industrial"> La Revolución Industrial</label>
+                </div>
+
+                <div class="multiple-choice-container">
+                    <p class="multiple-choice-title">E) Luego del golpe de Estado ¿qué etapa se inicia?:</p>
+                    <label class="radio-option"><input type="radio" name="opt-e" value="La etapa colonial" required> La etapa colonial</label>
+                    <label class="radio-option"><input type="radio" name="opt-e" value="La década infame"> La década infame</label>
+                    <label class="radio-option"><input type="radio" name="opt-e" value="El peronismo"> El peronismo</label>
+                    <label class="radio-option"><input type="radio" name="opt-e" value="La organización nacional"> La organización nacional</label>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Tarea 4</button>
+                <div class="success-msg" id="success-3">¡Tarea 4 enviada con éxito! Respuestas guardadas en la nube.</div>
             </form>
         </section>
 
@@ -238,6 +187,7 @@
             <div class="filter-tabs">
                 <button class="btn-tab active" id="tab-cuestionario-1">Cuestionario 1</button>
                 <button class="btn-tab" id="tab-cuestionario-2">Cuestionario 2</button>
+                <button class="btn-tab" id="tab-cuestionario-3">Cuestionario 3</button>
             </div>
 
             <div id="submissions-container">
@@ -253,188 +203,6 @@
         <button class="btn-dashboard" id="btn-toggle-login">Acceso Profesor</button>
     </div>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-        import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-
-        // ==========================================
-        // 1. CONFIGURACIÓN DE TU PROYECTO
-        // Reemplaza este objeto con tus datos de Firebase Console
-        // ==========================================
-        const firebaseConfig = {
-            apiKey: "AIzaSyCCw5JyFk3gE2iaszW0FNxHtV3XPJa7kPo",
-            authDomain: "cpes-56a66.firebaseapp.com",
-            projectId: "cpes-56a66",
-            storageBucket: "cpes-56a66.firebasestorage.app",
-            messagingSenderId: "1046401265413",
-            appId: "1:1046401265413:web:e1ba68ebfa32497340916c"
-        };
-
-        // Inicializar Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-
-        let currentActiveTab = 1;
-
-        // Elementos del DOM
-        const loginModal = document.getElementById('login-modal');
-        const teacherDashboard = document.getElementById('teacher-dashboard');
-        const btnToggleLogin = document.getElementById('btn-toggle-login');
-        const submissionsContainer = document.getElementById('submissions-container');
-        const loginError = document.getElementById('login-error');
-
-        // Escucha de estado de autenticación (Mantiene la sesión si recarga la página)
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                loginModal.style.display = 'none';
-                btnToggleLogin.style.display = 'none';
-                teacherDashboard.style.display = 'block';
-                fetchSubmissions();
-            } else {
-                teacherDashboard.style.display = 'none';
-                loginModal.style.display = 'none';
-                btnToggleLogin.style.display = 'block';
-            }
-        });
-
-        // Mostrar formulario de Login
-        btnToggleLogin.addEventListener('click', () => {
-            loginModal.style.display = 'block';
-            btnToggleLogin.style.display = 'none';
-            loginModal.scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Evento Login
-        document.getElementById('login-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('prof-email').value;
-            const password = document.getElementById('prof-password').value;
-            loginError.style.display = 'none';
-
-            try {
-                await signInWithEmailAndPassword(auth, email, password);
-                document.getElementById('login-form').reset();
-            } catch (error) {
-                loginError.style.display = 'block';
-                console.error("Error de autenticación:", error.message);
-            }
-        });
-
-        // Evento Logout
-        document.getElementById('btn-logout').addEventListener('click', async () => {
-            try {
-                await signOut(auth);
-            } catch (error) {
-                console.error("Error al cerrar sesión:", error.message);
-            }
-        });
-
-        // Guardar Datos en Firestore (Envío de alumnos)
-        async function sendSubmission(formNum, alumno, respuestas) {
-            try {
-                await addDoc(collection(db, "entregas"), {
-                    alumno: alumno,
-                    cuestionario: formNum,
-                    respuestas: respuestas,
-                    fecha: new Date().toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }),
-                    timestamp: new Date()
-                });
-                
-                document.getElementById(`success-${formNum}`).style.display = 'block';
-                document.getElementById(`form-cuestionario-${formNum}`).reset();
-                setTimeout(() => document.getElementById(`success-${formNum}`).style.display = 'none', 5000);
-                
-                // Si la profesora está logueada, actualizar el panel inmediatamente
-                if(auth.currentUser) fetchSubmissions();
-            } catch (error) {
-                alert("Hubo un error al enviar tu tarea a la base de datos. Por favor intenta de nuevo.");
-                console.error("Error al guardar en base de datos:", error);
-            }
-        }
-
-        // Interceptar envío Cuestionario 1
-        document.getElementById('form-cuestionario-1').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const alumno = document.getElementById('nombre-1').value;
-            const respuestas = [
-                { pregunta: "1. Lectura del texto", respuesta: document.getElementById('q1-1').value },
-                { pregunta: "2. ¿Qué fue la generación del 80?", respuesta: document.getElementById('q1-2').value },
-                { pregunta: "3. ¿Qué significa el PAN y su objetivo?", respuesta: document.getElementById('q1-3').value },
-                { pregunta: "4. Ley de Territorios Nacionales", respuesta: document.getElementById('q1-4').value }
-            ];
-            sendSubmission(1, alumno, respuestas);
-        });
-
-        // Interceptar envío Cuestionario 2
-        document.getElementById('form-cuestionario-2').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const alumno = document.getElementById('nombre-2').value;
-            const respuestas = [
-                { pregunta: "1. 1880 como punto de inicio", respuesta: document.getElementById('q2-1').value },
-                { pregunta: "2. Cambios que marcaron el fin", respuesta: document.getElementById('q2-2').value },
-                { pregunta: "3. ¿Qué es la Década Infame?", respuesta: document.getElementById('q2-3').value }
-            ];
-            sendSubmission(2, alumno, respuestas);
-        });
-
-        // Leer datos desde Firestore (Solo accesible para el panel logueado)
-        async function fetchSubmissions() {
-            submissionsContainer.innerHTML = '<p style="text-align: center; color: #6B7280;">Buscando entregas nuevas...</p>';
-            try {
-                const q = query(collection(db, "entregas"), orderBy("timestamp", "desc"));
-                const querySnapshot = await getDocs(q);
-                
-                let html = `<h3>Entregas Recibidas - Cuestionario ${currentActiveTab}</h3>`;
-                let count = 0;
-
-                querySnapshot.forEach((doc) => {
-                    const data = doc.data();
-                    if (data.cuestionario === currentActiveTab) {
-                        count++;
-                        let respuestasHtml = '';
-                        data.respuestas.forEach(r => {
-                            respuestasHtml += `
-                                <p class="question-title">${r.pregunta}</p>
-                                <p class="answer-text">${r.respuesta}</p>
-                            `;
-                        });
-
-                        html += `
-                            <div class="student-submission">
-                                <h4>🎓 ${data.alumno} <span class="badge">Enviado: ${data.fecha}</span></h4>
-                                ${respuestasHtml}
-                            </div>
-                        `;
-                    }
-                });
-
-                if (count === 0) {
-                    submissionsContainer.innerHTML = `<p style="color: #6B7280; text-align: center; padding: 20px;">No hay respuestas guardadas en la nube para el Cuestionario ${currentActiveTab}.</p>`;
-                } else {
-                    submissionsContainer.innerHTML = html;
-                }
-            } catch (error) {
-                submissionsContainer.innerHTML = '<p style="color: #EF4444; text-align: center;">Error al leer la base de datos. Verifica las reglas de seguridad.</p>';
-                console.error("Error leyendo documentos:", error);
-            }
-        }
-
-        // Control de pestañas del panel de control
-        document.getElementById('tab-cuestionario-1').addEventListener('click', (e) => {
-            currentActiveTab = 1;
-            document.getElementById('tab-cuestionario-1').classList.add('active');
-            document.getElementById('tab-cuestionario-2').classList.remove('active');
-            fetchSubmissions();
-        });
-
-        document.getElementById('tab-cuestionario-2').addEventListener('click', (e) => {
-            currentActiveTab = 2;
-            document.getElementById('tab-cuestionario-2').classList.add('active');
-            document.getElementById('tab-cuestionario-1').classList.remove('active');
-            fetchSubmissions();
-        });
-    </script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
